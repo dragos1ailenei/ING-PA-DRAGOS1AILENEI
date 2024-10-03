@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+int cmdc(int a, int b) {
+    return b == 0 ? a : cmdc(b, a % b);
+}
+int main()
+{
+    int numar1, numar2;
+    cin >> numar1 >> numar2;
+    cout << cmdc(numar1, numar2) << endl;
+    return 0;
+}
