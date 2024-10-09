@@ -1,4 +1,4 @@
-program 1
+program 1 divizor comun
 
 #include <iostream>
 using namespace std;
@@ -15,7 +15,7 @@ int main()
 
 
 
-program 2
+program 2 suma lista elemente
 
 #include <iostream>
 using namespace std;
@@ -33,7 +33,7 @@ int main()
 
 
 
-program 3
+program 3 ecuatie grad 2
 
 #include <iostream>
 #include <cmath>
@@ -52,3 +52,36 @@ int main()
     << -b / (2 * a) << " - " << sqrt(-delta) / (2 * a) << "i " << endl;
     return 0;
 }
+
+
+
+program 4 bubble sort
+
+#include<iostream>
+using namespace std;
+
+void bubbleSort(int arr[],int n){
+    for(int i=0;i<n-1;i++)
+        for(int j=0;j<n-i-1;j++)
+            if(arr[j]>arr[j+1])
+                swap(arr[j],arr[j+1]);
+}
+
+int main(){
+    int n;
+    cout<<"Introduceti numarul de elemente: ";
+    cin>>n;
+    
+    int arr[n];
+    cout<<"Introduceti "<<n<<" elemente: ";
+    for(int i=0;i<n;i++)cin>>arr[i];
+    
+    bubbleSort(arr,n);
+    
+    cout<<"Vectorul sortat: ";
+    for(int i=0;i<n;i++)cout<<arr[i]<<" ";
+    cout<<endl;
+
+    return 0;
+}
+
