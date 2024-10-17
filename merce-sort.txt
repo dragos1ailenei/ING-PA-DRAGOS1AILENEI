@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+void merge(int a[], int l, int m, int r) {
+    int i = 0, j = 0, k = l, L[m-l+1], R[r-m];
+    for (; i <= m-l; i++) L[i] = a[l + i];
+    for (i = 0; i < r-m; i++) R[i] = a[m + 1 + i];
+    for (i = 0; i <= m-l && j < r-m; a[k++] = (L[i] < R[j]) ? L[i++] : R[j++]);
+    while (i <= m-l) a[k++] = L[i++];
+    while (j < r-m) a[k++] = R[j++];
+}
+
+void mergeSort(int a[], int l, int r) {
+    if (l < r) mergeSort(a, l, (l+r)/2), mergeSort(a, (l+r)/2+1, r), merge(a, l, (l+r)/2, r);
+}
+
+int main() {
+    int a[8];
+    for (int i = 0; i < 8; cin >> a[i++]);
+    mergeSort(a, 0, 7);
+    for (int i = 0; i < 8; cout << a[i++] << " ");
+}
